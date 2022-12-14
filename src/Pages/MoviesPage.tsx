@@ -6,10 +6,14 @@ import MainLinks from "../Components/MainLinks";
 import Header from "../Components/Header";
 import Search from "../Components/Search";
 import { useSelector } from "react-redux";
+import { RootState } from "../Store/index";
 
 const Movies = () => {
   const [movies, setMovies] = useState<Props[]>();
   const [error, setError] = useState("");
+
+  const searchContent = useSelector((state: RootState) => state.searchTxt); //forces component ro re-render
+  //if the result is different
 
   const fetchMoviesHandler = useCallback(async () => {
     try {

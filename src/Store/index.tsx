@@ -1,10 +1,21 @@
-import { createStore } from "redux";
-// import {configureStore} from 'redux.js/toolkit'
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const searchReducer = (state = { searchTxt: "" }, action: any) => {
-  return { searchTxt: state.searchTxt + "kme" };
-};
+const initialState = { searchTxt: "" };
 
-const store = createStore(searchReducer); //wants pointer to reducer function
+const searchSlice = createSlice({
+  name: "search",
+  initialState: initialState,
+  reducers: {
+    changeSearchTxt(state, action) {
+      state.searchTxt = action.payload;
+    },
+  },
+});
 
+const store = configureStore({
+  reducer: searchSlice.reducer,
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export const searchActions = searchSlice.actions;
 export default store;
