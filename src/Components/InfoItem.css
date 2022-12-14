@@ -1,5 +1,5 @@
 .card{
-    height: 400px;
+    height: 450px;
     width: 400px;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 #E50914;
@@ -25,7 +25,9 @@ a{
 
 h2 {
     color:rgb(255, 255, 255);
+    padding: 15px;
 }
+
 
 .well.sb:hover h2{
     color: #831010;

@@ -2,9 +2,10 @@
   display: flex;
   height: 15%; 
   flex-flow: row wrap;
-  column-gap: 35px; 
-  align-items: center; /*centrira ih u sredinu*/
-  justify-content: center; /*centrira ih u sredinu*/
+  column-gap: 75px; 
+  align-items: center; 
+  justify-content: center; 
+  padding-top: 35px;
   /* border: 10px solid red; */
 }
 

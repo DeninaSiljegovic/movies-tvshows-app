@@ -1,9 +1,11 @@
 import "./Search.css";
 import { searchActions } from "../Store/index";
-import { useDispatch } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { RootState } from "../Store/index";
 
 const Search: React.FC<{ info: String }> = ({ info }) => {
   const dispatch = useDispatch();
+  const searchContent = useSelector((state: RootState) => state.searchTxt);
 
   return (
     <div>
@@ -16,9 +18,9 @@ const Search: React.FC<{ info: String }> = ({ info }) => {
             className="search-input"
             placeholder="Search for..."
             onChange={(e) => {
-              //console.log(e.target.value);
               dispatch(searchActions.changeSearchTxt(e.target.value));
             }}
+            value={searchContent}
           />
         </label>
       </div>
