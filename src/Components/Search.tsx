@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./Search.css";
+import { movieProps, Props } from "../interfaces";
+import InfoItem from "./InfoItem";
 
 const Search: React.FC<{ info: String }> = ({ info }) => {
   const [query, setQuery] = useState("");
-  const [data, setData] = useState("");
+  const [data, setData] = useState<Props[]>();
   const [error, setError] = useState("");
+  const [search, setSearch] = useState(false);
 
   console.log(query);
   const fetchDataHandler = async () => {
@@ -27,6 +30,34 @@ const Search: React.FC<{ info: String }> = ({ info }) => {
       if (response) {
         const res = await response.json();
         console.log(res);
+
+        let transformedData;
+
+        if (info === "movie") {
+          transformedData = res.results.map((movie: movieProps) => {
+            return {
+              id: movie.id,
+              name: movie.title,
+              poster_path: movie.poster_path,
+              type: "movie",
+            };
+          });
+        } else if (info === "tvshow") {
+          transformedData = res.results.map((tvShow: Props) => {
+            return {
+              id: tvShow.id,
+              name: tvShow.name,
+              poster_path: tvShow.poster_path,
+              type: "tvshow",
+            };
+          });
+        }
+
+        if (transformedData) {
+          setData(transformedData);
+          setSearch(true);
+          console.log(transformedData);
+        }
       }
     } catch (error) {
       let message = "Unknown Error";
@@ -49,6 +80,12 @@ const Search: React.FC<{ info: String }> = ({ info }) => {
           />
         </label>
         <button onClick={fetchDataHandler}>Fetch data from search</button>
+        {/* {search &&
+          data?.map((item) => (
+            <div className="content__display_child">
+              <InfoItem key={item.id} info={item} />
+            </div>
+          ))} */}
       </div>
     </div>
   );

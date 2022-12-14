@@ -5,6 +5,7 @@ import "../Components/InfoItemsCard.css";
 import MainLinks from "../Components/MainLinks";
 import Header from "../Components/Header";
 import Search from "../Components/Search";
+import { useSelector } from "react-redux";
 
 const Movies = () => {
   const [movies, setMovies] = useState<Props[]>();
