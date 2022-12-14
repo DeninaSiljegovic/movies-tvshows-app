@@ -12,37 +12,58 @@ const Movies = () => {
   const [movies, setMovies] = useState<Props[]>();
   const [error, setError] = useState("");
 
-  const searchContent = useSelector((state: RootState) => state.searchTxt); //forces component ro re-render
-  //if the result is different
+  const searchContent = useSelector((state: RootState) => state.searchTxt);
 
-  const fetchMoviesHandler = useCallback(async () => {
+  const fetchMoviesHandler = useCallback(async (type: String) => {
+    console.log("fun start: ", type);
+
     try {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=bb869eb04cc7887f2f1a34f8016e0943&language=en-US&page=1"
-      );
+      let response;
+      if (type === "") {
+        response = await fetch(
+          "https://api.themoviedb.org/3/movie/top_rated?api_key=bb869eb04cc7887f2f1a34f8016e0943&language=en-US&page=1"
+        );
+      } else {
+        response = await fetch(
+          `https://api.themoviedb.org/3/search/movie?api_key=bb869eb04cc7887f2f1a34f8016e0943&language=en-US&query=${type}&page=1&include_adult=false`
+        );
+      }
 
-      if (!response.ok) {
+      if (response && !response.ok) {
         throw new Error("OOOppssss...Something went wrong :(");
       }
 
-      const data = await response.json();
+      if (response) {
+        const data = await response.json();
 
-      //console.log(data);
+        //console.log(data);
+        let transformedMovies;
+        if (type === "") {
+          transformedMovies = data.results
+            .slice(0, 10)
+            .map((movie: movieProps) => {
+              return {
+                id: movie.id,
+                name: movie.title,
+                poster_path: movie.poster_path,
+                type: "movie",
+              };
+            });
+        } else {
+          transformedMovies = data.results.map((movie: movieProps) => {
+            return {
+              id: movie.id,
+              name: movie.title,
+              poster_path: movie.poster_path,
+              type: "movie",
+            };
+          });
+        }
 
-      const transformedMovies = data.results
-        .slice(0, 10)
-        .map((movie: movieProps) => {
-          return {
-            id: movie.id,
-            name: movie.title,
-            poster_path: movie.poster_path,
-            type: "movie",
-          };
-        });
+        //console.log(transformedMovies);
 
-      //console.log(transformedMovies);
-
-      setMovies(transformedMovies);
+        setMovies(transformedMovies);
+      }
     } catch (error) {
       let message = "Unknown Error";
       if (error instanceof Error) message = error.message;
@@ -51,8 +72,16 @@ const Movies = () => {
   }, []);
 
   useEffect(() => {
-    fetchMoviesHandler();
-  }, [fetchMoviesHandler]);
+    fetchMoviesHandler("");
+    if (searchContent.length > 2) {
+      console.log("New value: ", searchContent);
+      fetchMoviesHandler(searchContent);
+    }
+    // console.log("New value", searchContent);
+    // return () => {
+    //   console.log("Prev value", searchContent);
+    // };
+  }, [fetchMoviesHandler, searchContent]);
 
   return (
     <React.Fragment>

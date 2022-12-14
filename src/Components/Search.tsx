@@ -15,9 +15,10 @@ const Search: React.FC<{ info: String }> = ({ info }) => {
             id="search-form"
             className="search-input"
             placeholder="Search for..."
-            onChange={(e) =>
-              dispatch(searchActions.changeSearchTxt(e.target.value))
-            }
+            onChange={(e) => {
+              //console.log(e.target.value);
+              dispatch(searchActions.changeSearchTxt(e.target.value));
+            }}
           />
         </label>
       </div>
