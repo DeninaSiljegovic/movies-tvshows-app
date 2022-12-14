@@ -1,0 +1,32 @@
+.card{
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 #7209B7;
+    background-color: #22BEED;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.well.sb{
+    text-decoration: none;
+}
+
+.well.sb:hover {
+    color: #7209B7;
+    padding-bottom: 0.15rem;
+    border-bottom: 4px solid #7209B7;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2 {
+    color:rgb(255, 255, 255);
+}
+
+.well.sb:hover h2{
+    color: #7209B7;
+}

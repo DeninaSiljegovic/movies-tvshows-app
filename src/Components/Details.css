@@ -1,0 +1,16 @@
+.parent_card{
+    height: 60%;
+    width: 60%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 #7209B7;
+    background-color: #22BEED;
+    border-radius: 5px;
+    padding: 50px;
+    text-align: center;
+    display: grid;   
+    justify-items: center;
+}
+
+img{
+    align-self: center;
+}

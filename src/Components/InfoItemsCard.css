@@ -1,0 +1,13 @@
+.content__display{    
+    display: inline-flex; 
+    flex-flow: wrap;
+    gap: 35px; 
+    align-content: center; /*centrira ih u sredinu*/
+    justify-content: center; /*centrira ih u sredinu*/
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.content__display_child{
+    flex-basis: 33.3333%;
+}

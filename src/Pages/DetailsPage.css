@@ -1,0 +1,27 @@
+.item{
+    display: flex;  
+    flex-direction:column;    
+    align-items: center; 
+    justify-items: center; 
+    gap: 10px;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.item button{
+    border: 10px solid red;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .item a:hover,
+  .item a:active,
+  .item a.active {
+    color: #7209B7;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid #7209B7;
+  }
+
