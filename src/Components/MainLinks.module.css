@@ -1,23 +1,23 @@
 .parent {
   display: flex;
-  height: 100px; 
+  height: 15%; 
   flex-flow: row wrap;
   column-gap: 35px; 
   align-items: center; /*centrira ih u sredinu*/
   justify-content: center; /*centrira ih u sredinu*/
+  /* border: 10px solid red; */
 }
 
 .child {
   width: 100px;  
   height: 50px; 
-  box-shadow: 0 4px 8px 0 #7209B7; 
-  background-color: #4CC9F0;
+  box-shadow: 0 4px 8px 0 #db0000; 
+  background-color: #000000;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
 }
 
- 
 .header a {
   color: white;
   text-decoration: none;
@@ -26,7 +26,7 @@
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: #7209B7;
+  color: #831010;
   padding-bottom: 0.25rem;
-  border-bottom: 4px solid #7209B7;
+  border-bottom: 4px solid #831010;
 }

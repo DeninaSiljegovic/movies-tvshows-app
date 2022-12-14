@@ -2,8 +2,8 @@
     height: 400px;
     width: 400px;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 #7209B7;
-    background-color: #22BEED;
+    box-shadow: 0 4px 8px 0 #E50914;
+    background-color: #000000;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -14,9 +14,9 @@
 }
 
 .well.sb:hover {
-    color: #7209B7;
+    color: #831010;
     padding-bottom: 0.15rem;
-    border-bottom: 4px solid #7209B7;
+    border-bottom: 4px solid #831010;
 }
 
 a{
@@ -28,5 +28,5 @@ h2 {
 }
 
 .well.sb:hover h2{
-    color: #7209B7;
+    color: #831010;
 }

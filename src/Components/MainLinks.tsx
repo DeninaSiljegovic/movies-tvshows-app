@@ -3,7 +3,7 @@ import classes from "./MainLinks.module.css";
 
 const MainLinks = () => {
   return (
-    <header className={classes.header}>
+    <div className={classes.header}>
       <nav>
         <div className={classes.parent}>
           <div className={classes.child}>
@@ -19,7 +19,7 @@ const MainLinks = () => {
           </div>
         </div>
       </nav>
-    </header>
+    </div>
   );
 };
 

@@ -48,7 +48,6 @@ const Details: React.FC<{ info: basicData }> = ({ info }) => {
 
   return (
     <div className="parent_card">
-      {/* //<button onClick={fetchDataHandler}>Dovati podatke</button> */}
       <img src={imgSrc}></img>
       <h2>{title}</h2>
       <p>{overview}</p>

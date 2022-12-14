@@ -20,8 +20,8 @@
   .item a:hover,
   .item a:active,
   .item a.active {
-    color: #7209B7;
+    color: #831010;
     padding-bottom: 0.25rem;
-    border-bottom: 4px solid #7209B7;
+    border-bottom: 4px solid #831010;
   }
 
