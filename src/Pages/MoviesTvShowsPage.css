@@ -1,0 +1,19 @@
+.content__display{    
+    display: inline-flex; 
+    flex-flow: wrap;
+    gap: 35px; 
+    align-content: center; 
+    justify-content: center; 
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.content__display_child{
+    flex-basis: 33.3333%;
+}
+
+
+.header-style {    
+    background-color: #831010;
+  }
+  

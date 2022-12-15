@@ -1,7 +1,7 @@
 import "./InfoItem.css";
 import React from "react";
 import { Props } from "../interfaces";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const InfoItem: React.FC<{ info: Props }> = ({ info }) => {
   let imgSrc = "https://image.tmdb.org/t/p/w200" + info.poster_path;

@@ -3,7 +3,7 @@ import { searchActions } from "../Store/index";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { RootState } from "../Store/index";
 
-const Search: React.FC<{ info: String }> = ({ info }) => {
+const Search = () => {
   const dispatch = useDispatch();
   const searchContent = useSelector((state: RootState) => state.searchTxt);
 

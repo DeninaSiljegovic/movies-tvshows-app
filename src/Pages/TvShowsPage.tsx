@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import InfoItem from "../Components/InfoItem";
 import { Props } from "../interfaces";
-import "../Components/InfoItemsCard.css";
+import "./MoviesTvShowsPage.css";
 import MainLinks from "../Components/MainLinks";
-import Header from "../Components/Header";
 import { useSelector } from "react-redux";
 import { RootState } from "../Store/index";
 import Search from "../Components/Search";
@@ -58,8 +57,6 @@ const TvShows = () => {
           });
         }
 
-        //console.log(transformedTvShows);
-
         setTvShows(transformedTvShows);
       }
     } catch (error) {
@@ -85,7 +82,7 @@ const TvShows = () => {
 
       <MainLinks />
 
-      <Search info={"tvShow"} />
+      <Search />
 
       <div className="content__display">
         {error === "" && tvShows?.length === 0 && <h2>Found no TV shows.</h2>}

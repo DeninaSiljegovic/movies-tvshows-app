@@ -1,27 +1,40 @@
 .item{
     display: flex;  
-    flex-direction:column;    
-    align-items: center; 
-    justify-items: center; 
-    gap: 10px;
-    padding: 20px;
+    flex-direction:row;    
+    align-content: center; 
+    justify-content: center; 
+    gap: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
+    /* border: 10px solid red; */
 }
 
 .item button{
-    border: 10px solid red;
+  width: 100px;  
+  height: 50px; 
+  box-shadow: 0 4px 8px 0 #db0000; 
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;  
+  font-weight: bold;
 }
 
-.item a {
+.item button {
     color: white;
     text-decoration: none;
   }
   
-  .item a:hover,
-  .item a:active,
-  .item a.active {
+  .item button:hover,
+  .item button:active,
+  .item button.active {
     color: #831010;
-    padding-bottom: 0.25rem;
+    padding-bottom: 4px;
     border-bottom: 4px solid #831010;
   }
+
+
+
+  
+
 

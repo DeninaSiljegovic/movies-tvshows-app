@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import InfoItem from "../Components/InfoItem";
 import { movieProps, Props } from "../interfaces";
-import "../Components/InfoItemsCard.css";
+import "./MoviesTvShowsPage.css";
 import MainLinks from "../Components/MainLinks";
-import Header from "../Components/Header";
 import Search from "../Components/Search";
 import { useSelector } from "react-redux";
 import { RootState } from "../Store/index";
@@ -77,10 +76,6 @@ const Movies = () => {
       console.log("New value: ", searchContent);
       fetchMoviesHandler(searchContent);
     }
-    // console.log("New value", searchContent);
-    // return () => {
-    //   console.log("Prev value", searchContent);
-    // };
   }, [fetchMoviesHandler, searchContent]);
 
   return (
@@ -91,7 +86,7 @@ const Movies = () => {
 
       <MainLinks />
 
-      <Search info={"movie"} />
+      <Search />
 
       <div className="content__display">
         {error === "" && movies?.length === 0 && <h2>Found no movies.</h2>}
