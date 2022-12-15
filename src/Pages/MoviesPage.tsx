@@ -71,10 +71,14 @@ const Movies = () => {
   }, []);
 
   useEffect(() => {
-    fetchMoviesHandler("");
     if (searchContent.length > 2) {
-      console.log("New value: ", searchContent);
-      fetchMoviesHandler(searchContent);
+      const timer = setTimeout(() => {
+        console.log("Fired a call m");
+        fetchMoviesHandler(searchContent);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else {
+      fetchMoviesHandler("");
     }
   }, [fetchMoviesHandler, searchContent]);
 

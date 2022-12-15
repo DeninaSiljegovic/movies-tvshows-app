@@ -67,10 +67,14 @@ const TvShows = () => {
   }, []);
 
   useEffect(() => {
-    fetchTVShowsHandler("");
     if (searchContent.length > 2) {
-      console.log("New value: ", searchContent);
-      fetchTVShowsHandler(searchContent);
+      const timer = setTimeout(() => {
+        console.log("Fired a call t");
+        fetchTVShowsHandler(searchContent);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else {
+      fetchTVShowsHandler("");
     }
   }, [fetchTVShowsHandler, searchContent]);
 
