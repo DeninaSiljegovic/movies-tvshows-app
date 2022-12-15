@@ -93,8 +93,8 @@ const TvShows = () => {
         {error === "" && tvShows?.length === 0 && <h2>Found no TV shows.</h2>}
         {error === "" &&
           tvShows?.map((item) => (
-            <div className="content__display_child">
-              <InfoItem key={item.id} info={item} />
+            <div className="content__display_child" key={item.id}>
+              <InfoItem info={item} />
             </div>
           ))}
         {error !== "" && <h2>{error}</h2>}

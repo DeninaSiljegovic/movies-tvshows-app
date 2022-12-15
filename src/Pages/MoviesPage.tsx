@@ -97,8 +97,8 @@ const Movies = () => {
         {error === "" && movies?.length === 0 && <h2>Found no movies.</h2>}
         {error === "" &&
           movies?.map((item) => (
-            <div className="content__display_child">
-              <InfoItem key={item.id} info={item} />
+            <div className="content__display_child" key={item.id}>
+              <InfoItem info={item} />
             </div>
           ))}
         {error !== "" && <h2>{error}</h2>}
