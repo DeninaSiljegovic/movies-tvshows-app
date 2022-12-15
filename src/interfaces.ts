@@ -15,3 +15,13 @@ export interface basicData{
   itemId: string,
   type: string
 }
+
+export interface videoProps {
+  name: string,
+  key: string,
+  site: string,
+  size: number,
+  type: string,
+  official: boolean,
+  id: string
+}

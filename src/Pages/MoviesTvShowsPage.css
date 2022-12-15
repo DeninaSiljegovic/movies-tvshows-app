@@ -14,6 +14,23 @@
 
 
 .header-style {    
-    background-color: #831010;
+    background-color: #831010;            
   }
+
+.header-style h1 {
+    padding: 10px; 
+    padding-left: 20px;   
+}
+
+.header-style p {   
+    font-style: italic;
+    color: black;    
+    padding: 10px; 
+    padding-left: 20px; 
+    text-align: center;
+    padding-top: 35px;    
+}
+
+
+
   

@@ -28,6 +28,11 @@ h2 {
     padding: 15px;
 }
 
+.placeholderImg{
+    width: 210px;
+    height: 300px;
+}
+
 
 .well.sb:hover h2{
     color: #831010;

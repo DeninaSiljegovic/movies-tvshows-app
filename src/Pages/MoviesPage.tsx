@@ -81,7 +81,8 @@ const Movies = () => {
   return (
     <React.Fragment>
       <header className="header-style">
-        <h1 style={{ padding: "10px" }}>TVLand</h1>
+        <h1>TVLand</h1>
+        <p>One place, thousands of moves and tv shows</p>
       </header>
 
       <MainLinks />
