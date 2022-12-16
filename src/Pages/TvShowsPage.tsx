@@ -33,7 +33,6 @@ const TvShows = () => {
       if (response) {
         const data = await response.json();
 
-        //console.log(data);
         let transformedTvShows;
         if (type === "") {
           transformedTvShows = data.results
@@ -69,7 +68,6 @@ const TvShows = () => {
   useEffect(() => {
     if (searchContent.length > 2) {
       const timer = setTimeout(() => {
-        console.log("Fired a call t");
         fetchTVShowsHandler(searchContent);
       }, 1000);
       return () => clearTimeout(timer);

@@ -35,7 +35,6 @@ const Movies = () => {
       if (response) {
         const data = await response.json();
 
-        //console.log(data);
         let transformedMovies;
         if (type === "") {
           transformedMovies = data.results
@@ -58,8 +57,6 @@ const Movies = () => {
             };
           });
         }
-
-        //console.log(transformedMovies);
 
         setMovies(transformedMovies);
       }
